@@ -1,0 +1,447 @@
+/* Reset & base styling */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { height: 100%; font-family: 'Poppins', sans-serif; color: #fff; }
+
+header {
+  position: fixed; top: 0; width: 100%; padding: 20px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(0,0,0,0.3); backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+.logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem; color: #ffeaa7;
+}
+nav a {
+  margin-left: 20px; text-decoration: none;
+  font-weight: 600; color: #f1f2f6;
+  transition: color .3s;
+}
+nav a:hover { color: #ffeaa7; }
+nav .button {
+  padding: 8px 16px; border: 2px solid #ffeaa7;
+  border-radius: 24px; transition: background .3s;
+}
+nav .button:hover {
+  background: #ffeaa7; color: #2d3436;
+}
+
+main {
+  margin-top: 80px;
+}
+.landing {
+  height: calc(100vh - 80px);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.landing.home   { background-image: url('https://source.unsplash.com/1600x900/?galaxy'); }
+.landing.about  { background-image: url('https://source.unsplash.com/1600x900/?creative,art'); }
+.landing.contact{ background-image: url('https://source.unsplash.com/1600x900/?phone,help'); }
+.landing.auth   { background-image: url('https://source.unsplash.com/1600x900/?unlock,security'); }
+
+.overlay {
+  position: absolute; top:0; left:0; width:100%; height:100%;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  background: rgba(0,0,0,0.5); text-align: center;
+  padding: 0 20px;
+}
+
+.overlay h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem; margin-bottom: 10px;
+}
+.overlay p {
+  font-size: 1.2rem; margin-bottom: 20px;
+}
+.cta {
+  padding: 12px 30px; background: #ffeaa7;
+  color: #2d3436; font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform .3s;
+}
+.cta:hover { transform: scale(1.05); }
+
+footer {
+  position: fixed; bottom: 0; width: 100%;
+  padding: 15px; background: rgba(0,0,0,0.3);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+
+/*FORM PAGE*/
+
+/* Base Styling */
+.auth-landing {
+  min-height: 100vh;
+  background-image: url('https://source.unsplash.com/1600x900/?space,stars,login');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+.auth-flexbox {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  max-width: 900px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all 0.6s ease-in-out;
+  flex-wrap: wrap;
+}
+
+/* Form Panels */
+.auth-form {
+  width: 400px;
+  transition: all 0.5s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+.auth-form.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+  position: absolute;
+}
+
+.auth-form h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #ffeaa7;
+  margin-bottom: 20px;
+}
+
+.auth-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form input {
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2d3436;
+}
+.auth-form input::placeholder {
+  color: #636e72;
+}
+
+.cta {
+  background: #ffeaa7;
+  color: #2d3436;
+  border: none;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.cta:hover {
+  background: #fab1a0;
+}
+
+.switch-text {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  text-align: center;
+}
+.switch-text a {
+  color: #ffeaa7;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .auth-flexbox {
+    flex-direction: column;
+    align-items: center;
+  }
+  .auth-form {
+    width: 100%;
+    position: relative;
+  }
+}
+
+
+
+/*ABOUT-CONTACT*/
+
+.about-landing, .contact-landing {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+.about-landing {
+  background-image: url('https://source.unsplash.com/1600x900/?nebula,design');
+}
+.contact-landing {
+  background-image: url('https://source.unsplash.com/1600x900/?stars,message');
+}
+
+.about-overlay, .contact-overlay {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 60px 40px;
+  border-radius: 16px;
+  max-width: 960px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  animation: fadeUp 0.8s ease-out;
+}
+.about-overlay h1,
+.contact-overlay h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #ffeaa7;
+  margin-bottom: 20px;
+}
+.intro-text {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Cards for About Page */
+.about-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  width: 260px;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-10px) scale(1.03);
+}
+.card h3 {
+  color: #ffeaa7;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 0.95rem;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2d3436;
+  resize: none;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #636e72;
+}
+.contact-form textarea {
+  height: 140px;
+}
+.contact-form .cta {
+  align-self: center;
+  background: #ffeaa7;
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: #2d3436;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.contact-form .cta:hover {
+  background: #fab1a0;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/*HOME*/
+
+/* Hero Background */
+.hero {
+  height: 100vh;
+  background-image: url('https://source.unsplash.com/1600x900/?galaxy,universe');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.8), rgba(10, 10, 30, 0.7));
+  z-index: 1;
+}
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+  animation: fadeUp 1.2s ease;
+}
+.hero-overlay h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+.shiny-text {
+  background: linear-gradient(90deg, #ffeaa7, #fff6b7, #fab1a0, #ffeaa7);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s infinite linear;
+}
+@keyframes shine {
+  0% { background-position: 0% }
+  100% { background-position: 400% }
+}
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+/* 3D Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.btn-3d {
+  padding: 14px 30px;
+  border-radius: 40px;
+  background: linear-gradient(to right, #ffeaa7, #fab1a0);
+  color: #2d3436;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 6px 0 #d2a679;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-3d:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+.btn-3d.secondary {
+  background: linear-gradient(to right, #a29bfe, #81ecec);
+  box-shadow: 0 6px 0 #6c5ce7;
+}
+
+/* Dropdown Navigation */
+nav ul.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+nav ul.menu li {
+  position: relative;
+}
+nav ul.menu a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 16px;
+  transition: color 0.7s ease;
+
+}
+nav ul.menu a:hover,
+nav ul.menu .active,
+nav ul.menu .dropdown {
+  color: #a5810b;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #2d3436;
+  padding: 10px 0;
+  border-radius: 8px;
+  min-width: 180px;
+  z-index: 10;
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: white;
+  text-align: left;
+}
+.dropdown-menu li a:hover {
+  background: #636e72;
+}
+.dropdown:hover .dropdown-menu { 
+  display: block;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2.5rem;
+  }
+  nav ul.menu {
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    border-radius: 8px;
+  }
+}
